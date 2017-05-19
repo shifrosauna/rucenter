@@ -8,11 +8,11 @@ class dataSource
     {
         $this->createDatabaseConnection();
         $db = $this->getDatabaseConnection();
-        $sql = file_get_contents('database.sql');
+        $sql = file_get_contents(__DIR__ . '/database.sql');
         $db->exec($sql);
     }
 
-    protected function getDatabaseConnection()
+    public function getDatabaseConnection()
     {
         return $this->databaseConnection;
     }
